@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<title>front-end - project 5</title>
+</head>
+<body>
+<!--knockout html to represent the data-->
+<div id="PLACES" class="hidden-xs places">
+	<ul>
+		<form action="#">
+			<input class="search" placeholder="search" type="search" name="search" data-bind="value: searchBox, valueUpdate: 'keyup'" autocomplete="off">
+		</form>
+	</ul>
+	<ul data-bind="foreach: searchPlaces" style="background: darkred">
+		<li data-bind="text: $data.name, click: $parent.setCurrentPlace, css: { selected: $data.selected() > 0 }"></li>
+	</ul>
+</div>
+<button type="button" id="placesBtn" class="btn-default visible-xs btn-md placesBtn">menu</button>
+<div id="map-canvas"></div>
+<script src="./js/libs/jquery.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBe-z3rpo1VIL_9RyD0rP1-8McCOpyG5r4&callback=initMap"></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBe-z3rpo1VIL_9RyD0rP1-8McCOpyG5r4"></script>-->
+<script src="./js/libs/knockout-3.4.0.js"></script>
+<script src="./js/libs/infobubble.js"></script>
+<script src="./js/script.js"></script>
+</body>
+</html>
